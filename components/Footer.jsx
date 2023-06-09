@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="flex justify-between items-end px-8  sm:py-16 md:py-16 md:pt-20 pb-8 mt-4 pr-[55px] 2xl:pr-8">
+    <div className="flex justify-between items-end px-8  sm:flex mt-28 sm:py-16 md:py-16 md:pt-20 pb-8 pr-[55px] 2xl:pr-8">
         
     <div className="flex-1">
         <img src="https://zimo.team/assets/zimo-team-black.png" alt="zimo-team-logo" 

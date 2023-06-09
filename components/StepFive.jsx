@@ -37,7 +37,7 @@ const handleChange = (e) => {
           </button>
         </div>
         <section className="flex flex-col text-center items-center xl:items-end xl:text-[20px] text-[14px] sm:text-end  md:text-end ">
-          <h1>YOUR APPLICATION</h1>
+          <h1 className="text-[18px]">YOUR APPLICATION</h1>
           <div className="flex items-center justify-start gap-x-2 mt-7">
             <div className="bg-[#BE9f56] h-[2px] xl:w-[60px] w-[20px]"></div>
             <div className="bg-[#BE9f56] h-[2px] xl:w-[60px] w-[20px]"></div>

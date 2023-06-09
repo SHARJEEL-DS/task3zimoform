@@ -9,6 +9,7 @@ import { useContext } from 'react';
 import { FormContext } from "@/FormContext";
 import Footer from "@/components/Footer";
 import Stepfour from "./Stepfour";
+import ReactCountryFlag from "react-country-flag";
 const StepThree = ({ setTab }) => {
   
   const [country, setCountry] = useState("");
@@ -63,7 +64,7 @@ const StepThree = ({ setTab }) => {
           </button>
         </div>
           <section className="flex flex-col text-center items-center lg:items-end lg:text-[20px] text-[14px] sm:text-end  md:text-end ">
-            <h1>YOUR APPLICATION</h1>
+            <h1 className="text-[19px]">YOUR APPLICATION</h1>
             <div className="flex items-center justify-start gap-x-2 mt-7">
               <div className="bg-[#BE9f56] h-[2px] lg:w-[60px] w-[20px]"></div>
               <div className="bg-black h-[2px] lg:w-[60px] w-[20px]"></div>
@@ -107,7 +108,7 @@ const StepThree = ({ setTab }) => {
               className="md:tracking-[2px] mt-5 tracking-[0px] w-[100%] placeholder:text-black placeholder:font-normal placeholder:text-[12px] placeholder:md:text-[18px] placeholder:tracking-[0px] placeholder:md:tracking-[2px] max-w-[580px] text-center     bg-transparent border placeholder:text-center border-gray-500/50 rounded-xl p-3 focus:border-[#BE9F56] focus:bg-transparent outline-none"
             />
             <p className="md:text-[14px] text-[12px] text-[#737373] lg:absolute static text-center right-[-400px] bottom-0">
-              Use your legal name as it appears on your official documents
+              
             </p>
           </div>
 
@@ -157,14 +158,23 @@ const StepThree = ({ setTab }) => {
                   <div className="css-hlgwow">
                     <div className=" css-1dimb5e-singleValue">
                       <div className="flex justify-around items-center">
+                      <ReactCountryFlag
+            className="sm:ml-2 ml-3"
+            countryCode={countryCode}
+            svg
+            style={{
+              width: "37.31px",
+              height: "25",
+            }}
+            title={countryCode}
+          />
                         {/* <img
                           src="https://flagcdn.com/w320/pk.png"
 
                           alt="Pakistan"
                           className="      w-[18px] lg:w-[28px] object-contain "
                         /> */}
-                         <img src={flag} alt="Country Flag" className="w-[10px] lg:w-[18px] object-contain "
-/>
+  
                         <span className="flex lg:text-[18px] text-[16px] items-center ">
                             {countryCode}
                         </span>
