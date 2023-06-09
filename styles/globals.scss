@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// css restore
+* {
+  font-family: "Lato", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  user-select: none;
+}
+// scroll bar color change
+::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track {
+  background-color: silver;
+}
+
+// **************************** components
+// .hero
+// {
+//   background-image: url("/assets/herobg.png");
+//   background-size: 460px auto;
+//    background-position: center;
+   
+   
+// }
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 34%;
+  left: 18%;
+  width: 90%;
+  height: 90%;
+  background-size: 960px auto;
+  background-repeat: no-repeat;
+  background-image: url("/assets/herobg.png"); /* Replace with your background image URL */
+  filter: blur(10px); /* Adjust the blur radius as needed */
+  -webkit-filter: blur(12px); /* For Safari */
+  z-index: -1;
+}
+@media screen and (max-width: 768px) {
+  .hero::before
+  {
+    background-size: contain;
+    left: 0%;
+  }
+}
+
+
+//zimoteam styling
+#zimoteam
+{
+  background-image: url(/assets/zimoteambg.png);
+ background-position-y: 50%;
+ background-size: 59% auto;
+}
+
+
+// finance styling
+.fibg {
+  position: relative;
+  overflow: hidden;
+}
+
+.fibg::before {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  width: 90%;
+  height: 90%;
+  background-size: 760px auto;
+  background-repeat: no-repeat;
+  background-image: url("/assets/financebg.png"); /* Replace with your background image URL */
+  filter: blur(12px); /* Adjust the blur radius as needed */
+  -webkit-filter: blur(12px); /* For Safari */
+  z-index: 1;
+}
+@media screen and (max-width: 768px) {
+  .fibg::before {
+    background-size: 400px auto; /* Change background size for smaller screens */
+    left: 10%;
+  }
+}
+
+//career styling
+.career
+{
+  background-image: url("/assets/career.png");
+  
+}
+@media screen and (max-width: 768px) {
+  .career{
+    background-position: center;
+    background-size: cover;
+  }  
+}
+// **************************** overrides
