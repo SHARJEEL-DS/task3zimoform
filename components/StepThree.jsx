@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState,  useEffect } from "react";
+import { Countries } from "./Country";
+import { getCountryDataByName } from "./Country";
 import { useContext } from 'react';
 // import { FormContext } from './FormContext';
 import { FormContext } from "@/FormContext";
@@ -12,6 +14,25 @@ const StepThree = ({ setTab }) => {
   const [country, setCountry] = useState("");
   const { formData, updateFormData } = useContext(FormContext);
   const [inputValue, setInputValue] = useState('');
+  const [countryData, setCountryData] = useState(null);
+
+  useEffect(() => {
+    const fetchCountryData = async () => {
+      const data = await getCountryDataByName(formData.field14);
+      setCountryData(data);
+    };
+
+    fetchCountryData();
+  }, [formData.field14]);
+
+  if (!countryData) {
+    return <div>Loading...</div>;
+  }
+
+  const { countryCode, flag } = countryData;
+
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputValue(e.target.value);
@@ -136,13 +157,16 @@ const StepThree = ({ setTab }) => {
                   <div className="css-hlgwow">
                     <div className=" css-1dimb5e-singleValue">
                       <div className="flex justify-around items-center">
-                        <img
+                        {/* <img
                           src="https://flagcdn.com/w320/pk.png"
+
                           alt="Pakistan"
                           className="      w-[18px] lg:w-[28px] object-contain "
-                        />
+                        /> */}
+                         <img src={flag} alt="Country Flag" className="w-[10px] lg:w-[18px] object-contain "
+/>
                         <span className="flex lg:text-[18px] text-[16px] items-center ">
-                          +92
+                            {countryCode}
                         </span>
                       </div>
                     </div>

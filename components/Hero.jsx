@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
-import "react-clock/dist/Clock.css";
+// import "react-clock/dist/Clock.css";
 import { format } from "date-fns";
 import ReactCountryFlag from "react-country-flag";
 
